@@ -29,8 +29,13 @@ public class DeleteNodeInLinkedList {
      * Delete this node from a singly-linked list.
      * 
      * Execution: O(n) - Space: O(1)
+     * 
+     * 41 / 41 test cases passed.
+     * Status: Accepted
+     * Runtime: 0 ms
+     * Memory Usage: 38.3 MB
      */
-    static public void deleteNode(ListNode node) {
+    static public void deleteNode0(ListNode node) {
         
         // **** initialization ****
         ListNode p = node;
@@ -48,6 +53,28 @@ public class DeleteNodeInLinkedList {
             p = p.next;
         }
     }
+
+
+
+
+
+    /**
+     * Delete this node from a singly-linked list.
+     * 
+     * Execution: O(1) - Space: O(1)
+     * 
+     */
+    static public void deleteNode(ListNode node) {
+
+        // **** copy value from next node ****
+        node.val = node.next.val;
+
+        // **** remove the next node in the linked list ****
+        node.next = node.next.next;
+    }
+
+
+
 
 
     /**
